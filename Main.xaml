@@ -4,9 +4,10 @@
     <x:Property Name="Week" Type="InOutArgument(x:Int32)" />
     <x:Property Name="Sales_Order_Name" Type="InOutArgument(x:String)" />
     <x:Property Name="Evoucher_Order_Name" Type="InOutArgument(x:String)" />
+    <x:Property Name="test1" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1108,825</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>709.6,794.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,13 +105,13 @@
       <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="676,728" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="675.2,729.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="Main State Machine" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine InitialState="{x:Reference __ReferenceID2}" DisplayName="Main State Machine" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="StateMachine_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,7 +122,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,126.8</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID2" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="176,66" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID2" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="175.2,66.4" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Initialization\\initialization.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -143,7 +144,7 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <av:Point x:Key="ShapeLocation">212.4,126.8</av:Point>
-            <av:Size x:Key="ShapeSize">176,66</av:Size>
+            <av:Size x:Key="ShapeSize">175.2,66.4</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">141.59999999999997</x:Double>
             <x:Double x:Key="StateContainerHeight">29.520000000000067</x:Double>
@@ -159,7 +160,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Transition.To>
-              <State x:Name="__ReferenceID0" DisplayName="Web Part" sap:VirtualizedContainerService.HintSize="182,84" sap2010:WorkflowViewState.IdRef="State_2">
+              <State x:Name="__ReferenceID0" DisplayName="Web Part" sap:VirtualizedContainerService.HintSize="181.6,84.8" sap2010:WorkflowViewState.IdRef="State_2">
                 <State.Entry>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Web Part\\Web Part.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
@@ -178,7 +179,7 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">209.4,242.8</av:Point>
-                    <av:Size x:Key="ShapeSize">182,84</av:Size>
+                    <av:Size x:Key="ShapeSize">181.6,84.8</av:Size>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Double x:Key="StateContainerWidth">148</x:Double>
                     <x:Double x:Key="StateContainerHeight">47.759999999999991</x:Double>
@@ -194,11 +195,11 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Transition.To>
-                      <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
+                      <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="133.6,61.6" sap2010:WorkflowViewState.IdRef="State_3" IsFinal="True">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">233,369.5</av:Point>
-                            <av:Size x:Key="ShapeSize">134,61</av:Size>
+                            <av:Size x:Key="ShapeSize">133.6,61.6</av:Size>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
