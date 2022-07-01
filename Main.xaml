@@ -4,7 +4,7 @@
     <x:Property Name="Week" Type="InOutArgument(x:Int32)" />
     <x:Property Name="Sales_Order_Name" Type="InOutArgument(x:String)" />
     <x:Property Name="Evoucher_Order_Name" Type="InOutArgument(x:String)" />
-    <x:Property Name="test1" Type="InArgument(x:String)" />
+    <x:Property Name="test2" Type="InOutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>709.6,794.4</sap:VirtualizedContainerService.HintSize>
