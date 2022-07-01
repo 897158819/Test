@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qMcGYNBaZlX+vSFxS3JUNJyoEaY1TddIIcrTXbm53rukTGJrglGl7M3fFcD8S1tXRmctxGL+p0Bn8p9IMnfPRg==",
+  "dgSpecHash": "fJSBvSHaV87zaGlG6crSQ9sIYFDW8WZs/q3W754YeGO14SAZKcSMYR5XO4oqjH/v/bnud4LsKPGxn56cTVx3yw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fuwen\\Desktop\\Test_git\\.local\\",
+  "projectFilePath": "C:\\Users\\Fuwen\\Desktop\\test2\\Test\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Fuwen\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\Fuwen\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",

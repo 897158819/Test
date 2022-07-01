@@ -8421,9 +8421,9 @@
     "restore": {
       "projectUniqueName": "Jessie Process",
       "projectName": "Jessie Process",
-      "projectPath": "C:\\Users\\Fuwen\\Desktop\\Test_git\\.local",
+      "projectPath": "C:\\Users\\Fuwen\\Desktop\\test2\\Test\\.local",
       "packagesPath": "C:\\Users\\Fuwen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fuwen\\Desktop\\Test_git\\.local"
+      "outputPath": "C:\\Users\\Fuwen\\Desktop\\test2\\Test\\.local"
     },
     "frameworks": {
       "net461": {
