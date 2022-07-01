@@ -1,0 +1,710 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Web_Part" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Save_File_Path" Type="InOutArgument(x:String)" />
+    <x:Property Name="Sales_Order_Name" Type="InOutArgument(x:String)" />
+    <x:Property Name="Evoucher_Order_Name" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap:VirtualizedContainerService.HintSize>1408.8,7138.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Web_Part" sap:VirtualizedContainerService.HintSize="1419.2,7073.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Download_Time" />
+      <Variable x:TypeArguments="x:String" Default="Generated Report base on 訂單日期: 2022-06-26 to 2022-06-26" Name="Generated_Report_Base" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: 登錄 — CLEARomni" sap:VirtualizedContainerService.HintSize="1377.6,6980.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1344,6764" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Clearonmi_LoginURL" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetUrl DisplayName="Get Clearonmi URL" sap:VirtualizedContainerService.HintSize="1302.4,87.2" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Timeout="5" Version="V1">
+              <uix:NGetUrl.CurrentUrl>
+                <OutArgument x:TypeArguments="x:String">
+                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">Clearonmi_LoginURL</mca:CSharpReference>
+                </OutArgument>
+              </uix:NGetUrl.CurrentUrl>
+            </uix:NGetUrl>
+            <If sap2010:Annotation.AnnotationText="Judge whether the user has logged in. If the URLs are equal, the user has not logged in. Otherwise, the user has logged in" sap:VirtualizedContainerService.HintSize="1302.4,144.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">Clearonmi_LoginURL=="https://sso.clearomni.com/login"</mca:CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,768.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '郵箱地址'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Text="fuwen.yeung@hkbn.com.hk" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://sso.clearomni.com/login" DesignTimeRectangle="794, 518, 348, 32" ElementType="InputBox" FriendlyName="'fuwen.yeung@hkbn.com.hk'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;input' name='email' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control' name='email' aaname='' /&gt;" Guid="c6b37640-f74e-4192-86ec-6f792a9056ae" ImageBase64="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" InformativeScreenshot="ad857aec5bdfa0672a4ce706a653db2b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='登錄 — CLEARomni' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="794, 492, 52, 26" ElementType="Text" FriendlyName="'郵箱地址'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='control-label' aaname='郵箱地址' check:innerText='郵箱地址' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAeCAYAAAB5c901AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAINSURBVFhH7ZVNTsMwEIW5/w1yAV/Ayg2aDWLDyt3ADqk0leAENfNsjz3+KSStBCTNk0ZNbM94vhk7fbAr1wa4dG2AS9cGuHRtgEvXBrh03RHgcWdV19muYWoY7TioasxrtDvVWW3CKwvx1I5mWzJWN+cQS9NsS5fnkFvKJ1e7g0iuz0MhCEOYXgAZnYE7I1+saY0HJwGIxJXdHfn5zwEpuS5s5LqOZ4xxkmEc/oBvdup7QB2LI2KWgBSboSYBYlFVcTZKxjCgOHpZJ0Wi46BTYoAUxSo7qw388jFflBSvOg2YnwvoRE4MoZ1DqjR3sBUsG3NdLRJyJo8Xx2W4vIN+nXyGivcCUO4l85sJmKoKlYFdoiZ1OAlHuAUIyZjXA5ZFZ0XA5kchGsH19RH1wsZ+XZyv/GFzAcui3AjoNOGIQvLu4b4BXvW0IRKqCgDN62D8yGQful8ExDq3efjlDdyaYXoH8eFSg6kAs3XRL8y5E0K/cwGxqE4qWEgmAmITAjPUNQxlG0zoIF8H71N3MAKKWDE/jn1VB1mxg0kIIjsoA1aAsjjRfOKAy5ORgLkclCsk+WfHlXQzoLtTPjk4O0Aak8myKsAfOlgJRz0WQloD/OJaYWL/BJg50h+1obsVpiAHeDHD/6t2B1ek+wIcTx/28H5alUXA/cubfXx+seZ1XJVFwOFpbw+f55XZ2X4Bd6nGNbWa5OgAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '密碼'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Text="UA6s6y8uAuws" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://sso.clearomni.com/login" DesignTimeRectangle="794, 590, 348, 32" ElementType="InputBoxPassword" FriendlyName="'UA6s6y8uAuws'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;input' name='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' name='password' aaname='' /&gt;" Guid="6206d7d4-132f-4521-87ae-c9dfb7549c58" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWAAAAAkCAYAAAC33+CCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMXSURBVHhe7dnPahNRFIBxn6ZLX8G1O7cu3BVEqIiFIuQRBDdufADBzWy0wVYxkGLT1pTYCJK0Uqw2tSHJxHaMaScpJcfcZKZM/hQqBHI69zvwIzPJ3Eu6mI8wvSGMFZPZ2AyOGIbRMgTYkiHADKNvBgLcap+J32ojhlIrGalU6wCmyK0fB7Xtz0WAG81TOfKa3dcWYmg5tSrbey6AKcoXS7Lz/TCobiTA9aOG+GeCmEp93JSK1wEwRQduW9ZyO0F1CbA1CDCgAwG2EAEGdCDAFiLAgA4E2EIEGNCBAFuIAAM6EGALEWBABwJsIQIM6ECALUSAAR0IsIUIMKDDlQJcOqzJ/EKi9xp9H9cTAQZ0IMAWIsCADpcG+Omz5/L5S2HsDYzrjQADOkwwwL78yC6Js5STH17/vZPaN0knk5Iu1OXEXOMfSyGdlMV0Ucqn/Wu8/Zy8dZYk+7M5fs2YfYfXjO47me8SVwQY0GEgwIVCoXdw/8HD3iMHw4Q4fAQRvYnDz0N+45esO444Xbfuzsu7Dysye+emzMzMyNzcCymbdbWiLAbXfK2afbqh/NQ/d9b2xeteUy0k++dON4xmTWTfzJ4/ds3IviNrxux7he8S/XvjhAADOgwEOJFI9A6GfwEPB9gcm8CG5+a6+YUnUt3JSTq7K7OPE/LylSO+V5b3r9/I7XuPgufHTdnPr0smX5ajYO2JuyvZlZxsu+f9/bprttbWZasU/go9v9i3GvxSHVkzsu/omtF9r/BdYooAAzr8d4DNe+az6A1tRK8310b/YRf+ig7PMV0EGNBhogEOI0uAdSPAgA4TewQRjTIB1o0AAzpcGmATWBPSMJ7RABvmPGr4MwKsFwEGdBgIcPDaC/C4GxfxQIABHQiwhQgwoAMBthABBnQgwBYiwIAOBNhCBBjQgQBbiAADOhBgCxFgQAcCbCECDOhAgC1EgAEdxgb4z99T8Rq+NJotxNByalW291wAU5QvlqS4exBUNxJgM36rLb7fQgyl0qtSrrgApqhS+y2dTico7lCAmfhOZmMzOGIYRseI/AOxB5wlhTsjUgAAAABJRU5ErkJggg==" InformativeScreenshot="f571da2c5b665600e8c17f93d8cd4725.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='登錄 — CLEARomni' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="794, 565, 26, 26" ElementType="Text" FriendlyName="'密碼'" FullSelectorArgument="&lt;webctrl aaname='密碼' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='密碼' tag='LABEL' type='' class='control-label' check:innerText='密碼' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFjSURBVEhL7ZRNTgMxDIW5/w1ygVwgmhtkNogNq3RTdkilqQQnqLHj/DkzA6SCgMQ8yWoznfjzc5zewS9pBw/TDh6mHTxMfxR8tqCVBnuO60Z+1qCUKqEt2Klai5B5CtiZlZe3w7i4DzxYbSAtHYLzb5hTzz4upCR4ytmC/GyqKgnASclpTk5dQacpPYHXClWqFEeSrSY4JclFEAwhE7eUYMIRioqoXfU7xnpMOocEpk8E8mYPPrjnYrgTtKe4ovducxzELQ0vi9YTJG6m9ubCuIjkvN9xmGAGGlfB6xCFsHMd3d8MdnMZkB45PP8WvCg4Rj0by+Haam+UmGhUC17KgcXn7b5vB4c1XsP83fF1c5+CV1rUhgSX5xqPy9B1rIYvFIDP6R9tG/wFbTnmReoYt7eovoKsbnCPxKCJI/xh8Ef652B/eYXTy2VIZPDh+Az3j0dwTzj+AyKD54cDnN6ug+IK7+rlRrmoZEdfAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NClick ClickType="Single" DelayAfter="10" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://sso.clearomni.com/login" DesignTimeRectangle="794, 700, 348, 33" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-primary btn-block' aaname='Login' check:innerText='Login' /&gt;" Guid="fc93e3f1-64a8-48ce-8a77-2c09c7afe1c7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAWAAAAAlCAYAAAB8gzMnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKXSURBVHhe7duxaxNhHIdx/yQ1NhTUgEiRTtIhQ8YOhQzaQRehKGTSxeCQKUsppZN0KIWCiRBpaFMo6dApWCgplTQIQSGhkBL5enfpJWeTBlQu79vw/OADubzXyxIewsvbW2IYhmGMzB8B3t8/ULFYAgCEwG1scHoBfvHyte5EHis6PQsACEFkasZrrT+9AN+++0gPYnMAgJDcf/jUa60/BBgAxogAA4AhBBgADCHAAGAIAQYAQwgwABhCgAHAEAIMAIYQYEy+RForq1nND1sDDCLAsEheVef7V90atvYfVitqq64vS0PWAIMIMCwSUoABSxFgWGR0gOPvt1X92f2OqtNSbW+tv62QyCp33Lpcu1DtqK6mTrXprmUO+6+3TqXmsXYrgXt3lhX3nwOMEQGGRUYEOLGhr22nnQcftZiY0/yHkmrOdXXrjbf+bu+HdH6s9VTS2/PNnVw4T7omwHKiu+3uCSeV+lTv3uc8c+AzgZARYFhkRIA3nXCeV7QSeM+L7llJi7Gsys4v48ZOun+/F9rrfgEfKuPf531mS+WMfw2MDwGGRUYEeCCcwfeWVW5e+TsCjBuAAMMi//ALuFFWKpbWbkOqFbrbER4CjBuAAMMiIwJ8dQ/47baqznXt8+Ue8M5f7AETYFiCAMMi3QAPzEneWx99CiKt9eDJhu/uawIMuxFgTIik4sGTDAOhBexDgDERlgp1tb+VlF5wrhfWvFMR7aMNzvfCagQYkyH4jxjONM/KynC2F5YjwABgCAEGAEMIMAAYQoABwBACDACGEGAAMIQAA4AhBBgADBka4GfPX+le9Imi07MAgBBEpma81vrTC3Cn80vFYkm5fAEAEAK3sW5r/ekFmGEYhhnvEGCGYRgjI/0GSFMGNxLB0JIAAAAASUVORK5CYII=" InformativeScreenshot="13a0ead67096ceda00b158decb760188.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Login — CLEARomni' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,325.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,108.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+                    <ui:LogMessage.Message>
+                      <InArgument x:TypeArguments="x:Object">
+                        <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">"Login Success"</mca:CSharpValue>
+                      </InArgument>
+                    </ui:LogMessage.Message>
+                  </ui:LogMessage>
+                  <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://homeplus-staging.clearomni.com/admin" Version="V1" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <Sequence DisplayName="Download Sale Order" sap:VirtualizedContainerService.HintSize="1302.4,3428" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click '訂單'" sap:VirtualizedContainerService.HintSize="1260,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Timeout="10" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin" DesignTimeRectangle="8, 220, 180, 42" ElementType="Text" FriendlyName="'訂單'" FullSelectorArgument="&lt;webctrl aaname=' &amp;#x9;               &amp;#x9;訂單 &amp;#x9;            ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' &amp;#x9;               &amp;#x9;訂單 &amp;#x9;            ' tag='A' type='' class='al-sidebar-list-link' check:innerText='訂單' /&gt;" Guid="120f5144-dc02-4657-a387-ef87b568af54" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAuCAYAAACbDNOZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANxSURBVHhe7ZrPSxRhGMf7hyJKF0zL/AFhwnYoCIooECwr6BhBCAWBFCwGKWUeCgrCmxBsRuAhOi1k0iEKa0GpqA4Supc9Pc3z7vOsuzO7Ojs7uuPj9wMf9HVm3sPsZ1/eWXefQh4X7h+goQcHaXiijS4/aqeRKc8nKboCYQLlNrlRbpWb5Xa54XN393PODsm7FPjJU+chNKEieZcCb+segNCEiuSNwKEtFckbgUNbKpI3Aoe2VCRvBA5tqUjeCBzaUpG8ETi0pSJ5I3BoS0XyRuDQlorkjcChLRXJG4FDWyqSNwKHtlQkbwQObalI3vEEfnboKq0XCnR7LOPG/PPDx0+h9c8HYVQVyTuewH/9/uMmZdJnLtLU0xcyCketOSM7sUhr3pz5bPW4LuuLNN49Tbl1GZcpUG7Cuz67IuMK3DUyP0yUiuS9PSv4pes3XORh9c8XzVqREq0tTFedN75QIFqeq/pb6VoJ2j/mwCvP5zcMAo/d9J2XNPPsHqVrHGtERfLee3vw+oG7+1IBVvCdMp15Tz+LfGOLlH/TXOSK5G0s8ECMlatyydqBw1a5EbfSXOSK5I0VfMM5yrtbsxUrNBu4FkYxGLcSPXJF8o4vcN5L9wyedr/zgybvw8Pqn2s73Tzw6nj53Oo9fPAcGM1A3P++US7vvTZlokWuSN7xBP7q9Vs36del7y5yjr0Ras0Zyaa2KFjBd8yxeV/cn+n5TT42SjNLvsizo8HrN1GRvI0FHkKs4K331rtVeeU9ynGrvsh/zNNIxbVbqUje8W1RMg8fl7coLTPwmTdW8GR6jSYXVqn41x+36kX+peAdX6TJ4VrH66tI3sYeMqs+o/Z/tl2yfuBBgys4TLqK5I3A2dlld08aI+SbBO6siuQdX+At356wIQJ3MWMFN6sieccTeGK+bFVnD+5W7TLB6OuJwHefiuQdT+CJ+rIV3NMqkvf2rOD8zxuOPKz++SCMqiJ5G3vIhHteRfJG4NCWiuSNwKEtFckbgUNbKpI3Aoe2VCRvBA5tqUjeCBzaUpG8ETi0pSJ5I3BoS0XyRuDQlorkjcChLRXJG4FDWyqSNwKHtlQkbwm8s4fau3qp/UifMwXhLlB75Xa54UMd3S5uRvIuBd5x7Dgd7h2gzr4TnoPU1Q9h8uVWuVlulxtOHe13cRMR/QeK9Y+En6uNiQAAAABJRU5ErkJggg==" InformativeScreenshot="61be345f8f6c2598743ba6e077272f06.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='儀表板 — HOMEPLUS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '銷售訂單'" sap:VirtualizedContainerService.HintSize="1260,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin" DesignTimeRectangle="8, 262, 180, 45" ElementType="Text" FriendlyName="'銷售訂單'" FullSelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;銷售訂單 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;銷售訂單 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' type='' class='' check:innerText='銷售訂單' /&gt;" Guid="d0bd0bfd-813d-47c3-a15a-fd681febaab0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAxCAYAAABpjGPXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANaSURBVHhe7dldThpRGMbxrqnVxGqlggkF/ERNa9UmbdN2DybdCzfeuQSuSFiBCWEBBFcA16/znI9h5nDUoUAD5zxv8o8dHHA0P14n9o0dSeZdqcZYENkxvAmchZUdw9sA396TjZ2ybHyoqDYZW4OsV9iF4bdbJYUbY3hr4Fsfq/K+XJPtSj2pITv7jK1+sAqzsAvDm7v7CjfG8NbAd6tHslc/lXLjTCoH54ytTTALuzAM7HYMbw28cnAh1ZNL+dS8ktrZtap+fsPYymadwizswnCpeqxwYwxvDRwnNC6+yeHn73L05YccXTK2BiVWYRZ2YXiv3lS4MYa3Bl47u1InHn/9KSdXvxhbm2AWdmEYtyx2DG8L/Fq9G/CE0+vfqubNH8ZWNusUZmEXhnGbYsfw1sBxT4OVb4H7XpCxVSsFntiF4f3DAsB9L8TYqkbgLOgInAUdgbOgI3AWdATOgo7AWdAROAu6OIF3HkXGfWmZ41ana/59Lw/jsTzcuY/bujKQyeebd30ZJT+fQSd7jpN7jjl+dtR14TrMcTrm6+La3cl8LyxffMABDCBS5ECbTAorDymLtz1UDxWaQceHVGTUu89dT6uXnDTs5h5z32i5Y1xX9nz7/aTPZdniAq6256O0zXEWV7uXPH5nIeHj5DyVAu88lgT0LtpZeh44fvLZ4Qb/l6IC3h6OZZCUjoLlw2THoFJbcvzyrUV2LLgpjNmtrPMDZ4sqrg1uAqrJ1s38+s+d52xzZ/vblrPBkbl1enWmr4lNIvBXgZtjBbzgzHDL8DLwPN78dfvPYfmiAq4wOTPqdRPI5mBqXOAzbvC5blG4wRcRN3jRDV4YnJ6ity3c4Mstug0OIPmP2OBFgb+GCc956W/e3OD/u7g2uPprSF/aKWzg0Cj9swDg6f24+4bRPQ98OvvG9H2O+YsLuEGGPxUCeEth88ObfrzoRp0f+Cz/oZROwTdJbEUGXGc3oYI07M8AfPEbXF8DN/iyigq4uxk1RAde7r55zvvb3Gth9NdRWzsd35vLH4HPXpQbnMUTgbOgI3AWdATOgo7AWdAROAs6AmdBR+As6AicBR2Bs6AjcBZ0BM6CjsBZ0BE4CzoCZ0FXCPjf21vGgsiO4c0NztY73qKwoPMDF3kCWViZAWW/SoQAAAAASUVORK5CYII=" InformativeScreenshot="fe5367f91679726723c82ba2fd0e5c2e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='儀表板 — HOMEPLUS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '操作'" sap:VirtualizedContainerService.HintSize="1260,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Timeout="10" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order" DesignTimeRectangle="1689, 267, 200, 30" ElementType="Button" FriendlyName="'操作'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='btn btn-primary btn-lg dropdown-toggle' aaname='         操作    &amp;#x9;' check:innerText='操作' /&gt;" Guid="87ed301c-bdb2-41cd-95f7-447b6f72c158" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAiCAYAAAATbDYAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVHhe7ZxBSsNAGEa9m1uv5coLuPUSunElgjvpCSrdWbopCO2ii99OMl+cJH/SaaZVC+/BA8dMXUge/0QkVwYA2RAMwBE0wcw+n+zu7cZuX68RMRqaCG2IJhhiQfQNbYgmGG8jItYKgkHMUBAMYoaCYBAzFASDmKEgGMQMBcEgZigIpsh7+9iZrZbetSNcLsx27/Yc18/rr9Ya/15BMEX2g5lt4i/UYyCC8Jnt+j6uTxQhnlRBMEX6wfzc/ImdKfLjo63syz7mcR32HYLp8+sKgplof5IsbOZ+P8G50avj1+YxrkOAMZ75u23jz0z3498oCKbI0uNT/fkmmDBd9DXB/CsFwRSZBhNv/oTqaNY7YiUR6FoVSedoRjD/SkEwRfaD0bQJR60mmObIFaJQBPX+7f4IVl3f72s9+1TBeCRROb4sHuK+YcIe77M4rCCYImMkm30Uu4WtjghGzy7tZ5jEggkzFg2xTFMQTIHNA351wx93JJtt6klxjmCCXjTEMl1BMBMNsayW7WNY18EYEs8VTDCNhljKFARTZBJMb5KMkAQyHozPUKCeIRRiKVcQTJEjEyYNaGTKnHPC4OkUBFOkH0z1bLOPQDGMHc0I5jIUBFNkJ5g4VbRuxVBd6/9JmGAuQ0Ewk6xDqQk3dVx3bvx+DHFf8i8yBHMZCoJBzFAQDGKGgmAQMxQEg5ihaILhVbGIvu6rYnkZOWLf0IT7MnIAOAzBAGRj9g0Re2VPcPNHnwAAAABJRU5ErkJggg==" InformativeScreenshot="99ef74faf24ab109fa944587b5cc4771.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '匯出銷售訂單'" sap:VirtualizedContainerService.HintSize="1260,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order" DesignTimeRectangle="1690, 329, 198, 26" ElementType="Text" FriendlyName="'匯出銷售訂單'" FullSelectorArgument="&lt;webctrl id='btn-export' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn-export' tag='A' type='' class='' aaname='匯出銷售訂單' check:innerText='匯出銷售訂單' /&gt;" Guid="6e21643a-4f3f-4480-a4a8-e012f5cbf148" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMoAAAAeCAYAAABtyoGRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM3SURBVHhe7ZkxTiNBEEX3TlyDM8AJ4AI+ADmCkBhSYguRIBERIjIQJEg4IEQimd034ltF0TPbs8a9gP6TSm3XdPfUmP+nxubX/f19d3Z21hljPnJwcNA9PT11NooxI9goxlRgoxhTgY1iTAU2ijEV2CjGVGCjGFPB2o3y/PzcbW9vdxsbG9Vxenr6tvoj+/v7o8fF1dVVN5vNupeXl/799fV1/5rY29vrbm9v3+UF9e7u7i6PM25ubvb7DZHn6H3p2gjq4jyMMc8a1rJPzBPxWkx7mhhFwjg5OelHQBBHR0f9H//4+Lgogix2yEbhGHOikNkbM1xcXPTHHh8fe7OqDhlFgoxr2T+LdCguLy/7PXM+G5n37Buh7mjY+J564nxdT+kzMm1oZhTEOp/PeyFJCBIUYxYXMI+1U4yCqOgIMmQUKa8lOjoJec0D9sBQMQf5nFOJNQjVHQ3mjvJ1adpRBGIYejSRWOBfjEKXwgjaj/klUSp0PmJnZ2ewrhyqK4s61i9KRjHfi6bfURjpLIgsGgARSeiR0p11KPJ6xClDcZ74mCOUv7m5WdYQu5HI5pzKkFHiZzMWpS5n2tK0o0j4W1tbg3fuaKASWbTMZc0qRlGecWpHqWHMKPpsRKwbSnNMe5oahUBcCBKBSmi6m2dK+WwUiELkdRY1PxZQQ84T8VGJcWpHkflL+4lYX4TzuKN8D5oaRYIZu3Mzd8xAJdGWhEhO83LnEDlfK1xFrmOIUn0QPxsR64bSHNOepkaR8BHmOjtKDjpKrVH+JkrWMEd1sTaa3h3lZ9LMKHd3d0sRrtMo2htzEOT1A0JJhFHYqnVMlCWj6Fqy8cSQUUowN1+f+f80Mwr/Q2FETAhp6NGLkAgRV+l4KSREiVVm4fxDAs555tY+eq1qlCnXpqg1m/l8mhkFsWAWiOL6DEpC1J2ZPOcqCbhklHV0FGqoFbnqNl+LJkaZ8gWZWEUoCDLuhaCzgBnV0VZ9/o97EXqU4xpyrgYb5WuydqMY8xOwUYypwEYxpoKlUR4eHmwUYwbAKIvFwkYxZgwbxZgKbBRjKrBRjKngnVHOz8+719fXt0PGGHF4ePjHKIvuN3RKdfTNB+FbAAAAAElFTkSuQmCC" InformativeScreenshot="762cddd0e56b6e1452d467ccbdfb8079.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <If DisplayName="Set the time of the previous day" sap:VirtualizedContainerService.HintSize="1260,575" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">DateTime.Now.Day==1</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="697,412" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="655,318" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">DateTime.Now.Month==1</mca:CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">Download_Time</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">DateTime.Parse((DateTime.Now.Year-1).ToString()+"-"+"12"+DateTime.DaysInMonth(DateTime.Now.Year-1,12).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">Download_Time</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">DateTime.Parse(DateTime.Now.Year.ToString()+"-"+(DateTime.Now.Month-1).ToString()+"-"+DateTime.DaysInMonth(DateTime.Now.Year,DateTime.Now.Month-1).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Get the time of the previous day" sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">Download_Time</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">DateTime.Parse(System.DateTime.Now.Year.ToString()+"-"+System.DateTime.Now.Month.ToString()+"-"+(System.DateTime.Now.Day-1).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '訂單日期'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1260,220" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Timeout="20" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order#" DesignTimeRectangle="681, 476, 720, 34" ElementType="InputBox" FriendlyName="'2022-06-23 to 2022-06-23'" FullSelectorArgument="&lt;webctrl id='export[ordered_at]' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='export[ordered_at]' tag='INPUT' type='text' class='form-control date-picker' aaname='' /&gt;" Guid="d3213cc5-6805-4774-b03f-66c94b0dc4ca" ImageBase64="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" InformativeScreenshot="d11b650056f8057c466965483137dc5a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="516, 476, 150, 34" ElementType="Text" FriendlyName="'訂單日期'" FullSelectorArgument="&lt;webctrl aaname='訂單日期' parentid='exportOrderModal' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='訂單日期' parentid='exportOrderModal' tag='LABEL' type='' class='col-sm-2 control-label ' check:innerText='訂單日期' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAmCAYAAAA894IZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIKSURBVHhe7ZgxbgJBDEVzPk5AQ4GQuAA9PT01NS0H4QpcgZJyok/iyHFmBwKzTpDekyx2lvHsSH54l31bLpdlsVgUgDFBNEgB0SAFRIMUEA1SeJvP52U2m30OAcYB0SAFRIMUEA1SQDRIAdEgBUSDFBANUugm2uVyKev1umy322/jyWRSjel0Wk6nUzkcDj++07nz+Vz0Mtmftxyjlhsj5uh4tVpd17fxZrO57ndoL/A8XUSrFUiSqXhGLLChXF9MG2ue1rD5WktCRNF8bkS5uqbl6FPixb3afvf7/dcPRei4tT7cT9qtsyVaLLqJdk9H+41oIu5DY9/REG0cuohWkyIWaEi0Z3hUtNjVrPtqLX9egWh9+POOJtQ5YoFrcTwePzM+eFQ0Olo+/0Y0L5EvvhHnCElQE9JH7c9Aq6Mh2jj8i1unCupzh4KO9rq8fEfrLVqUG9H60EU0FUm3n1aBbonmc4fiWdGUX1tXof1LOL8eHa0f3URTkaygNQFaokV8l2lRu46n1tGEhJNEfk+1uYjWjz8VrdVhhkLPgraGrlGb46P27s0e/oXta7fbXcXyIFo/0kSTVF6SFlpnjI6mPXjJDM3TeX3qO3sMiJLC44z6jKYi+VcJLSk894oGr0MX0QBugWiQAqJBCogGKSAapIBokAKiQQqIBikgGqSAaJACokEKiAYJlPIOmlWEnwhayPUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomRight" X="-228" Y="-16" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">Download_Time+" to "+Download_Time + "[k(enter)]"</mca:CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click '確認'" sap:VirtualizedContainerService.HintSize="1260,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order#" DesignTimeRectangle="1201, 589, 200, 34" ElementType="Button" FriendlyName="'確認'" FullSelectorArgument="&lt;webctrl parentid='exportOrderModal' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='exportOrderModal' tag='INPUT' type='submit' class='btn btn-primary exportOrderModalSubmit' aaname='確認' check:text='確認' /&gt;" Guid="19c2e8ce-b242-4830-a014-02f0880fdc9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAmCAYAAACI/XQWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKPSURBVHhe7Z3BThRBFEX9N7d+Dr9gYuJfQIwrFm505wbB6MKQgJuJiQZQSSaIYiYGIZS5zdy2qKkZnrGr2ZybnPR0dVUv4B1eTbPoe4kQEg7CEPIP6YXZPX6RHr9+kB6+ug8Ac+SE3HB6YZAFoI7ccHphahMB4BoHYQACOAgDEMBBGIAADsIABHAQBiCAgzAAARyEAQjgIMwd82zyKJ2dT7tjee3J3lo6/fUlbR1s9OeauywfT98t3AOGwUGYxqjYL68u5j/l60xOdtL55Wx+thhJITm0fvf4+Y1zU4omWRCmHQ7CjERe0C72rYP1NPv9Pb39vNmhaxJMXeXDtzfz38zfSB4xnX3q5mmthdEYwrTDQZiR+Ppz0m+tLIzGdJQs6ji6bmHKjiK8JbM4+ux5EkZj5RoYBgdhRqAmgaSRJC7yckvl644+aysnSSxcPh9h2uIgzAiosB0VvgpeBb4seeeoobX5HB3zhwMwPA7CNMadwp1Bxa6tmOKirxV8rcOog+gBgqXTfD9QuE0y+D8chGmMilwFLiFU5CpsFbm2V+XTM2fZl3cJ4ocD4vDHfnfPfA60wUGYxuivvqSxMOow7g7+XlPrMBqTXE7eQXw/dSrdz2ugHQ7CjIDlKIVZ1WEkh+d6nbqL7vN++rK/JpF01BrkaYeDMCOwTBiNreowpTCHZ/udGOowuRwa8yNqzfU4DIeDMCOQd5PaF/YymrN99PTGlkz/pNS51pXC6LO6TikdDIeDMCOgInY3WTWWU+swnlvKZgnLe8BwOAgDEMBBGIAADsIABHAQBiCAgzAAARyEAQjgIAxAAAdhAAI4CAMQwOmF4XUXAHWqr7vghUoAi8iJ6guVCCG3B2EICSelP73UiXd2EXLlAAAAAElFTkSuQmCC" InformativeScreenshot="0b8ee1b221039d1adad88818854331a4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <If DisplayName="Set install Folder" sap:VirtualizedContainerService.HintSize="1260,696" sap2010:WorkflowViewState.IdRef="If_3">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">DateTime.Now.Day==1</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="839,533" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="797,439" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">DateTime.Now.Month==1</mca:CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,276" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">Save_File_Path</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">Save_File_Path+"\\"+DateTime.Parse((DateTime.Now.Year-1).ToString()+"-"+"12"+DateTime.DaysInMonth(DateTime.Now.Year-1,12).ToString()).ToString("yyyyMMdd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
+                            <ui:CreateDirectory.Path>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">Save_File_Path</mca:CSharpValue>
+                              </InArgument>
+                            </ui:CreateDirectory.Path>
+                          </ui:CreateDirectory>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,276" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">Save_File_Path</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">Save_File_Path+"\\"+DateTime.Parse(DateTime.Now.Year.ToString()+"-"+(DateTime.Now.Month-1).ToString()+"-"+DateTime.DaysInMonth(DateTime.Now.Year,DateTime.Now.Month-1).ToString()).ToString("yyyyMMdd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="CreateDirectory_2">
+                            <ui:CreateDirectory.Path>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Save_File_Path</mca:CSharpValue>
+                              </InArgument>
+                            </ui:CreateDirectory.Path>
+                          </ui:CreateDirectory>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,276" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">Save_File_Path</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Save_File_Path+"\\"+DateTime.Parse(DateTime.Now.Year.ToString()+"-"+DateTime.Now.Month.ToString()+"-"+(DateTime.Now.Day-1).ToString()).ToString("yyyyMMdd")</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="CreateDirectory_3">
+                      <ui:CreateDirectory.Path>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Save_File_Path</mca:CSharpValue>
+                        </InArgument>
+                      </ui:CreateDirectory.Path>
+                    </ui:CreateDirectory>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="1260,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <Assign DisplayName="Set Download Base" sap:VirtualizedContainerService.HintSize="1260,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">Generated_Report_Base</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Generated Report base on 訂單日期: "+Download_Time+" to "+Download_Time</mca:CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NClick ClickType="Single" DisplayName=" Click Download Sales report Button" sap:VirtualizedContainerService.HintSize="1260,158" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order#" DesignTimeRectangle="875, 415, 39, 34" ElementType="Button" FriendlyName="'BUTTON 157401'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='BUTTON' class='btn btn-primary download-button' aaname='' /&gt;" Guid="22a69b63-e36c-48a3-b38f-236cab3e3694" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAmCAYAAABdw2IeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVFhH7Zgxa8JAGIb737r2b3Xq5izZuru1gwEhBRcJQnFoQSWTQhaHWNG0vHrl3hDlJHp8aA6+Bx4y5O54CJcQ7gEBEWbsePmGl+ETnj8eW6PpMV2kim1bKDVdpIp1DWyLRGOlJRorLdFYaYls7DTFxq6HXYp31xgPiWzsrBZbpui7xnhINPaftsaO1naRM+QL97xLJTJPdhxhvrMLnbBZRei65lwhkdsGjmCJUCOR3bO1YKlQI/GP/U5Q2Lmk/InR+4wOP8wdvH7FyP/sDbJN0HOt1SDxj62/+TXKbYZ8naE4DTV4fiGIeOwRvxMMsglKXu8W69gGjdxtG9xQorHSEo2VlmistERjpSUaKy2pYoM68gzqMDkEAooF9jvbebDd482JAAAAAElFTkSuQmCC" InformativeScreenshot="d7226692d37482142284e611389ed7cb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="397, 410, 399, 44" ElementType="Text" FriendlyName="'Generated Report'" ImageBase64="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" SearchSteps="Selector, FuzzySelector">
+                          <uix:Target.FullSelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">String.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='job-remarks' tag='TD' aaname='{0}' /&gt;", Generated_Report_Base)</mca:CSharpValue>
+                            </InArgument>
+                          </uix:Target.FullSelectorArgument>
+                          <uix:Target.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">String.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='job-remarks' tag='TD' aaname='{0}' type='' class='' /&gt;", Generated_Report_Base)</mca:CSharpValue>
+                            </InArgument>
+                          </uix:Target.FuzzySelectorArgument>
+                        </uix:Target>
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DisplayName="Type Into Saved Sales Order Path" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1260,220" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="136, 503, 791, 19" ElementType="InputBox" FriendlyName="'Export_Order_2022062307…'" FullSelectorArgument="&lt;wnd aaname='浏览器窗格' cls='DirectUIHWND' /&gt;&lt;wnd aaname='文件名:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='浏览器窗格' cls='DirectUIHWND' /&gt;&lt;wnd aaname='文件名:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="1051bd18-8b7f-4e29-989d-09cdad3c82c5" ImageBase64="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" InformativeScreenshot="d3c991ba9b0db6659fd26071562e3127.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='另存为' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomRight" X="-82" Y="-10" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Save_File_Path+"\\"+Sales_Order_Name + "[k(enter)]"</mca:CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+              </uix:NTypeInto>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1260,112" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Sales Report Finish"</mca:CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+            </Sequence>
+            <Sequence DisplayName="Download Evoucher Order" sap:VirtualizedContainerService.HintSize="1302,2890" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click '執行訂單'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/order#" DesignTimeRectangle="8, 397, 180, 45" ElementType="Text" FriendlyName="'執行訂單'" FullSelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;執行訂單 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;執行訂單 &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' tag='A' type='' class='' check:innerText='執行訂單' /&gt;" Guid="783c890e-b59c-436f-80df-d580e3e9f4f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAxCAYAAABpjGPXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALWSURBVHhe7dlbThRBFIBh9+S7MZgYkJtcoghjogbdA4l74YU3lsDTJKyAZMICOsMKmOeyTlX1vbrpHkFnTv0n+RNmmO4ZzdeHRl/lY+xsHU3M7sl3s396bg4mv4jWJjErdsXwu51j4ewm8PbAf19cEKkon8CbDU7r3aANDnBa1wBOqgM4qQ7gpDqAk+oATqoDOKkO4KQ6gJPqAE6qAzipDuCkOoCT6gBOqgM4qS5R4LcmMw/mpvH85WxhHmfXteeayWvM/NZ+Lefomsq5r+7No30mm9Yfd87i3lxOrs2dfZv6LMzdlT1++hAeV8YdE85PtdICHsUV4NjvPwnc4WpfGPFiSE3r/OUF0zy2/Fy1x/IZqq+XPxPAO2ODSzH4DTQO4mDcw+sG7j9GOWzwZQJ4pWKDN7didWuO2ZgtjNWt7IsDp+cqIeDxWwY3AWwn8CJ/351Ne86Vz8CLoBt43z1+dZ7/p4qmEtvgHmb9F74SyM08fC8K3B/bfY8e/6nwVP3A6+crLsCe11C9xIDbCtSCI9wyuOcsnhx/C3i5TUcB/6tblPI9+wfgfaUF3EFuTh158XUFeL7Z2xu02nLblA3+sqW3wV0xGOXGzGbNDe4bDbx1QbHB/3UJAe/5xdACq0HLN3hjky8FvDhe3n8M8Hb970+x2ODF4yq+8P3/BFxuiUbPwIsktQAe/dcRjzGb10G3gct5KtNENgC4w8wGf7EA3vyv75DbrJF75lEJcPkLLMafz587n+HvAfDxJQqcUgngpDqAk+oATqoDOKkO4KQ6gJPqAE6qAzipDuCkOoCT6gBOqhsN/OPZz+iJiFYtsToI+Obhmdn9XAIHOa16uVMH3NoVwxvbncBPzc6nb2bvyw93ANG6JGbFrhje2D5yuGUCbw/8/f6J+XD81b1QrgZZ+UQrn7UqZsWuGH67deBwywTeHvje4YRIRfkE3h746zebRCryY8wfgc8nQKtdcuUAAAAASUVORK5CYII=" InformativeScreenshot="5f2cee802e19664de4f90938e9819ac0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='銷售訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '操作'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Timeout="10" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment" DesignTimeRectangle="1689, 267, 200, 30" ElementType="Button" FriendlyName="'操作'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='button' class='btn btn-primary btn-lg dropdown-toggle' aaname='         操作    &amp;#x9;' check:innerText='操作' /&gt;" Guid="27308b00-6756-434d-a7dd-8721f6c295d8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAiCAYAAAATbDYAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVHhe7ZxBSsNAGEa9m1uv5coLuPUSunElgjvpCSrdWbopCO2ii99OMl+cJH/SaaZVC+/BA8dMXUge/0QkVwYA2RAMwBE0wcw+n+zu7cZuX68RMRqaCG2IJhhiQfQNbYgmGG8jItYKgkHMUBAMYoaCYBAzFASDmKEgGMQMBcEgZigIpsh7+9iZrZbetSNcLsx27/Yc18/rr9Ya/15BMEX2g5lt4i/UYyCC8Jnt+j6uTxQhnlRBMEX6wfzc/ImdKfLjo63syz7mcR32HYLp8+sKgplof5IsbOZ+P8G50avj1+YxrkOAMZ75u23jz0z3498oCKbI0uNT/fkmmDBd9DXB/CsFwRSZBhNv/oTqaNY7YiUR6FoVSedoRjD/SkEwRfaD0bQJR60mmObIFaJQBPX+7f4IVl3f72s9+1TBeCRROb4sHuK+YcIe77M4rCCYImMkm30Uu4WtjghGzy7tZ5jEggkzFg2xTFMQTIHNA351wx93JJtt6klxjmCCXjTEMl1BMBMNsayW7WNY18EYEs8VTDCNhljKFARTZBJMb5KMkAQyHozPUKCeIRRiKVcQTJEjEyYNaGTKnHPC4OkUBFOkH0z1bLOPQDGMHc0I5jIUBFNkJ5g4VbRuxVBd6/9JmGAuQ0Ewk6xDqQk3dVx3bvx+DHFf8i8yBHMZCoJBzFAQDGKGgmAQMxQEg5ihaILhVbGIvu6rYnkZOWLf0IT7MnIAOAzBAGRj9g0Re2VPcPNHnwAAAABJRU5ErkJggg==" InformativeScreenshot="c3efbe4ceed12598ef1f9ce3392bdfd5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '匯出訂單'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment" DesignTimeRectangle="1481, 303, 407, 26" ElementType="Text" FriendlyName="'匯出訂單'" FullSelectorArgument="&lt;webctrl id='btn-export' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn-export' tag='A' type='' class='' aaname='匯出訂單' check:innerText='匯出訂單' /&gt;" Guid="6eae76a4-b254-4e37-b064-8fc84c3aec3c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZsAAAAeCAYAAAD6krMnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMiSURBVHhe7dxNTuMwAIbh3IlrcIb2IByAfQXqijXsEGwR3UH5B3EAEGyQ+gdULaBuPPNlbGRMEtKp3VnM+0hWqJOmWfmVW81kHx8f5vb21sxmMwMAQCzqivqizmRvb2/m5ubGngIAIB71RZ3JptOpub6+ttMAAMSjvqgz2WQyMVdXV3YaAIB41Bd1JhuPx+bi4sJOAwAQj/qizmSvr6/m/PzcTgMAEI/6os5kLy8vxAYAkIT6os5kz8/P5vT01E4DABDP2dmZUWey0WhkTk5O7HQ8unmz2TQrKyu1x97enn33d61Wq/K83N3dmdXVVXN5efnlddFnaaytreXPqaM/r/fovbqPP6+ha9/f3/P7AwCqqS/qTDYcDk2327XT8bhFXMednZ38KFrEt7a28gV7e3u7cOHWIh8u6mFsdE7X6Fr3dxiGME56rfv49N719fX8ucLXurd/veZ0zn8uAEA59UWdyQaDQdLYPD09mYODg3zxd4u3i4COYRBk3tjUVRabMFTsbAAgDvVFncljc3x8bKfj8Xc2jhbwsq+13AIvfxObMAz+/Zyi2AAA0lFf8tj0+31zdHRkp+NRZNxvNjpqh6M4+BHRwl+0MynaUZSNoveXKYuN/6xVQ9f48QQAVFNs1JmksXE7GxePRqNRurMJdzKhn3Y2dVTFxj2ro2v9zyu6BgBQTX1ZWmw0FIfwB/aynU3RfBgb8ePhgubGPF+j6fnY2QBAfEuNjVvkq36z0bVVEfopNnVUxYadDQDE9xmbXq+XPDYuHil3NmHI2NkAwL+nvqgzyWNzf3//GZ3UsXH31tDfdWNTRNeGnwcAmM/SYqN/Y6OjAhDuPsLhAqMgFJ0vGovGZp7PcqNusADgf7e02GiBV3DED0IMfjzqxEbX1g0FOxsAWNxSYlPndxB/LLK4KyxFv9nonuFcHcQGABaXPDYAABAbAEByn7HZ3d01GxsbdhoAgHj29/f/xObh4cEcHh7aaQAA4mm328QGAJCWvjnLY/P4+EhsAABJKDb5f1dDbAAAqRAbAEByX2LT6XTMbDazpwAAiGNzc/N3bPrmFx5dasDxyZYSAAAAAElFTkSuQmCC" InformativeScreenshot="c39c58ba5b8fabc083baf78c3a2dbb56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '請選擇'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Timeout="20" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment#" DesignTimeRectangle="439, 182, 1295, 30" ElementType="Text" FriendlyName="'請選擇'" FullSelectorArgument="&lt;webctrl id='select2-chosen-2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='select2-chosen-2' tag='SPAN' type='' class='select2-chosen' aaname='請選擇' check:innerText='請選擇' /&gt;" Guid="78426cf0-23bc-4e42-bbae-117285c2addc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABRMAAAAiCAYAAADMIU6GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPzSURBVHhe7d2xSiNrAIZhr+lcwKn3pizttktpZ6eVdyBY2GhhYxEQFCVFEgmEBCI2/+Eb9p8dh8ke9yThFPs88KLGSWL98cc5+vj4KJvNpqzX67JcLstisShvb29lPp83zWYzSZIkSZIkSSpHGRJXq1UzIk6n0zKZTMrLy0t5fn4uT09PkiRJkiRJktR0lBOJGRLH43G5v78vt7e3kiRJkiRJktR2cXFR/vr7WznKR5tzIjFDIgAAAABAXzsm5lRiPtqchREAAAAAoK8dE3OzlfyPRGMiAAAAADCkHRNzx+bcbMWYCAAAAAAM+TQm5k4sxkQAAAAAYEg7Js5mM2MiAAAAALCVMREAAAAA+BJjIgAAAADwJXsZE8/Pz5uG5PGHh4cfP/2Ux6+urprv8/X4+Lgt1+f39eeTk5Py+vraXLtcLsvp6WnzNdd1nzfUtr8LAAAAAPg9O42J/RHwK2UIfH9/b8bA0WjUjIR5nTo41u8vLy+b3+Xas7OzrWNiHQvraLnt9wAAAADAbg7+Mec68g3J4xkPv3oyMY93r+tesy1jIgAAAADsx97HxJwkzMnAoWEvZTjs655MzGiYk4gZAetpxDouRvfkYV/3OgAAAABgv3YaEzPoff/+vR0Ku//bsMq4V4fCbfKcPLc7OA6dVoz+mJjX717XLX/b0OgIAAAAAPy+vZ9M7I+A/TIaXl9ft993x8fuCcX+/0qs+mNil5OJAAAAAHA4BzmZ+KvTgt1TivUmK7+6vlafV8fKvFfGxv51/ZxOBAAAAID9OMgNWLZ9tLn/eB0Tq387mZjfDQ2Eed08t8p1RkQAAAAA2K///WTizc1N87yha7vlo80ZGPOe/Y85dx+rN4Dpvg8AAAAAsLudx8TuiFdPEv7Xk4n5Po/V7/N6ed2u7num7pg5lFERAAAAAPbjYGPi0LCX6riX54xGo0/X57Xyd9QTiI+Pj+2pxe7z6nv25Zq8FgAAAACwfwf7mPPQicD6eH1exsc8Z+javvx9UcfE/Jyv9b23Vf8mAAAAAGA3B/+Yc77WYa/eFCWP1Rum1GGxOwAOlWvu7u6a7/Oe/Y8/R17XyUQAAAAAOIydxkQAAAAA4M9hTAQAAAAAvqQdE+fzuTERAAAAANjq05j4/PxsTAQAAAAABrVj4tvbW3l5eTEmAgAAAACD2jFxsViUyWRiTAQAAAAABrVj4nK5LNPptNzf3//4FQAAAADAT+2YuF6vS04njsfjZlDMCUVJkiRJkiRJqrVj4mazKavVqhkUc0IxH3nO/1DMTVlyl2dJkiRJkiRJSkcfHx8lg2JOKOYjzxkVc1OW3OU5zWYzSZIkSZIkSX98s/IPgXcO2enUAjMAAAAASUVORK5CYII=" InformativeScreenshot="49005ffddba3288c17cdf96e81911bb9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="153, 182, 271, 34" ElementType="Text" FriendlyName="'流程'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-sm-2 control-label ' aaname='流程' check:innerText='流程' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARMAAAAmCAYAAADnaX8SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH7SURBVHhe7doxjtpQFIbRLCKREinZECtgBSwAenp6ShZAOzVrYAu0lJSUjn5rXuYJmSRSbmGUc6QnbIPp5tN9Hj59+fZj+Pz1+wDwL8QEKCEmQAkxAUqICVBCTIASYgKUEBOghJgAJcQEKCEmQAkxAUqICVCiLCb7/X44n8/vZx9ybbFYTL7Xe3t7Gz+X13xXjh/XcrkcLpfL+x3AnJTE5H6/j7HIH3ten8WgX/lMwpB7cr7dbsfviakw3W63YbPZiAnMVOk2JwHoo5AArFarP04lj/eJCbyekpjkD3y32/2KQUyFJFuYrKZtbR4nlmeTjW0OzFdJTK7X6zg1JB6JyLOJJLHJBPJ4PfHoJxPg9ZRtc/pQTE0c/WrRiRaeXE9U+ucoU0t0YJ5Kn5n8rRacdrxer8fJJqufWhKNbJ9sbWD+SmOSyaJFoh1n8mgPTnOe602LxfF4HCeObJfyfps8xAReR1lM+mhEopAp43cxyfvtc237kpXjqS1OVj+5APNRFpM+CH1ApmLSgnE4HMbr/b29nJtM4DWUxSSR6Lc4bQKZisnjFCMm8PpKYpI45D8yp9NpfG0hiT4cWVO/eO1jknsftzb98lsTmKfSB7DA/0tMgBJiApQQE6CEmAAlxAQoISZACTEBSogJUEJMgBJiApQQE6CEmAAFhuEneO7R9Fl/54gAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '優惠券/套票'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment#" DesignTimeRectangle="450, 362, 1303, 23" FriendlyName="'優惠券/套票'" FullSelectorArgument="&lt;webctrl aria-role='option' id='select2-result-label-34' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' id='select2-result-label-34' tag='DIV' type='' class='select2-result-label' aaname='優惠券/套票' check:innerText='優惠券/套票' /&gt;" Guid="1c14df10-b2e2-44e1-8595-6ccc73f5cc80" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABRsAAAAbCAYAAAD8g1gXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARVSURBVHhe7d27i1xVHAfw/E/WWqdNbSPYpBHSiIUKIgFfJCBsY1JE8IFiwBQpNrASg8+IJsRFYoyiwWdQY1azIbsWR75DznLm5s7uvZshxN3PFz7MzH2cOdN++c3MniIiIiIiIiIiIiIyhygbRUREREREREREZC7Z88BDewsAAAAAwN1SNgIAAAAAc6FsBAAAAADmQtkIAAAAAMyFshEAAAAAmIvRZePZz8+X1dWbZX3939v/MdOfq7//UfYfeKJ3jacPvlT+ur5Sjr76Ru/5KucvXrq88frEycWpdbvnxxiyh3zWscke+9YCAAAAgJ1uVNmYku+nn3+dKuhy7Lvvr0zKu/bayHVblZLdtGXim++8O3m/rJ/XeUwBmOcp9bL2mY8+7X3vJ599oaz8/U85d2H5jnORdeq6Q+U96z1DC1MAAAAA2C1GlY3tZGGez0omH2sB2FfKzTqWtet9KfXGpDtRuLh0uqytr0/eY+yEYkrM3JfPmT0NzdjyEgAAAAB2ksFlYy3eaqmXxzpl2L0upVtbNqZ8HJK2pOwaM4m47+FHyw9Xfiy//Ha1PLL/wB3ns0679xSLmaCsE5VV32eue8g+28J0O5OSAAAAALCTDC4bU7QlbfE2K/OYbGz1Xb+ZhSPHytraWjn13pmNY0OnFOvnG3NPjbIRAAAAgN1sUNmYki9l372abNysyJyVtuD84OOzZfXmzfL84YWN989Xo7PuVqVl9p4oDgEAAABgnEFlY0q6SAF3aun9QdN+9XcP+9ZLAdiWfnk9a6ox75lz3a84p+jsO/7Y40+VP69dK19/8215cO++qXO1eJyV7p5NNgIAAADAcKP+ICZlWkrH+vzC8ldTv3WYc3mdgi6Ovf724KnGpJ1OrMVgX6FYZQ9J3VO89tbxSWl4/MTJqWsja475OjYAAAAAMNy2ysY8bjbhmPN991eZSuz7CnbKwNz74SefTdbJ+ltNIqbwTHLdwRdfnkw0ZrIxE4513VpKjkn9nGOz1WcHAAAAgJ1qW2Vj/Xrx9ZWVqWnEFIjt68j1ufbQwiuTx/baqGulNLx46fLGfa1MImYisV03z7tTis88d6jcuLFazl1Y3jjWleuzx/a+rNXurSvHc0+doKx7r8fzvHsPAAAAAOw2255srMVbLdySbulWi8RcO6vQy+taGmbdvuKu73hfAbm4dLrcurU2+Tfq9tqqFp/t1767qZ8r6v7r8cMLRybHs5e6n/aavr0DAAAAwG4xumyMNu0kY8q2mhz/4vyXU+Ve996aHM/5XJfndb0UivmqdLtG1S0Ot1LXalPft8pa+c3JXJvnWb8WiNlTLVWTtpRsz3ePAwAAAMBuMapsvFdq0df9d+i2zEwUewAAAABw/7gvy0YAAAAA4P9H2QgAAAAAzIWyEQAAAACYC2UjAAAAADAXykYAAAAAYC723P5jZxEREREREREREZG7irJRRERERERERERE5pBS/gNIklsg4DWy7wAAAABJRU5ErkJggg==" InformativeScreenshot="923c565f6784e4490d2ed1dbde04c18b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <If DisplayName="Set the time of the previous day" sap:VirtualizedContainerService.HintSize="1047,575" sap2010:WorkflowViewState.IdRef="If_7">
+                <If.Condition>
+                  <InArgument x:TypeArguments="x:Boolean">
+                    <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">DateTime.Now.Day==1</mca:CSharpValue>
+                  </InArgument>
+                </If.Condition>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="697,412" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="655,318" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">DateTime.Now.Month==1</mca:CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">Download_Time</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">DateTime.Parse((DateTime.Now.Year-1).ToString()+"-"+"12"+DateTime.DaysInMonth(DateTime.Now.Year-1,12).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_12">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">Download_Time</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">DateTime.Parse(DateTime.Now.Year.ToString()+"-"+(DateTime.Now.Month-1).ToString()+"-"+DateTime.DaysInMonth(DateTime.Now.Year,DateTime.Now.Month-1).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="305,155" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Get the time of the previous day" sap:VirtualizedContainerService.HintSize="263,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">Download_Time</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_34">DateTime.Parse(System.DateTime.Now.Year.ToString()+"-"+System.DateTime.Now.Month.ToString()+"-"+(System.DateTime.Now.Day-1).ToString()).ToString("yyyy-MM-dd")</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '創建日期'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1047,220" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment#" DesignTimeRectangle="439, 486, 1325, 34" ElementType="InputBox" FriendlyName="'INPUT export_created_at'" FullSelectorArgument="&lt;webctrl id='export_created_at' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='export_created_at' tag='INPUT' type='text' class='form-control date-picker' aaname='' /&gt;" Guid="25893ad8-3cae-4e95-966c-af60f4cd9717" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABTEAAAAmCAYAAAAcGN99AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGISURBVHhe7dixDUMhEERB998oogASEqz7+iAHztlgRtrgdB28zwIAAAAACCZiAgAAAADRTsQcY6ze+2qtmZmZmZmZmZmZmV1bdcrqlduJmPWYc74XAAAAAMAd1SmrV24nYlbhBAAAAABI8NsrRUwAAAAAII6ICQAAAABEEzEBAAAAgGgiJgAAAAAQTcQEAAAAAKKJmAAAAABANBETAAAAAIgmYgIAAAAA0URMAAAAACCaiAkAAAAARBMxAQAAAIBoIiYAAAAAEE3EBAAAAACiiZgAAAAAQDQREwAAAACIJmICAAAAANFETAAAAAAgmogJAAAAAEQTMQEAAACAaCImAAAAABBNxAQAAAAAoomYAAAAAEA0ERMAAAAAiCZiAgAAAADRREwAAAAAIJqICQAAAABEEzEBAAAAgGgiJgAAAAAQTcQEAAAAAKL9jZi99zXnfC8AAAAAgDuqU1av3E7EHGM8jyqcZmZmZmZmZmZmZrdWnbJ65XYiJgAAAABAIhETAAAAAAi21hdjyzYW9L4JuAAAAABJRU5ErkJggg==" InformativeScreenshot="582f859d993ac1403a96605e458406df.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="153, 486, 271, 34" ElementType="Text" FriendlyName="'創建日期'" FullSelectorArgument="&lt;webctrl aaname='創建日期' parentid='exportOrderModal' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='創建日期' parentid='exportOrderModal' tag='LABEL' type='' class='col-sm-2 control-label ' check:innerText='創建日期' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARMAAAAmCAYAAADnaX8SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK8SURBVHhe7do9jhpBEMXxPYQt2ZI/JfsynGBPwAXIycmJiUmJSUm5AlcgJBzrzfJMbbu7YXHZK8v/n9Rip6fpnqQeBfbD2/cfhzfvPgwA8DsePn/9Pnz68u18CQD3oTMBkIIwAZCCMAGQgjABkIIwAZCCMAGQgjABkIIwAZCCMAGQgjABkIIwAZDij4TJcrkcHh8fh8PhcJ55Tvf3+/14X+smk8k45vP5cDqdzque1m02m/PVr3TP722N8jn092w2G47H48/rxWIxnlvbr3c+gIv0MHEAqDgVDi7GWLQOE4trNV8WtIfeF2l9r9gVGAoOh4leY3jFofPX6/WzM66FGYCLtDBxILjj8Ke/inE6nY7zrTDRdRkUEotZr+UazfWKvQwTic/m69iZxDPi+QD6UsKk101o6BNfRVkLk1jAKnAFT20Pj/i1Re/tFXsrTMruxF+vtFec1+jtD+AirTNR4aoo/YlvKkZ3K2WYlOHhorbYGejVoWOa6xV7K0zoTIB8qWHS6ipaYRL5/m63q+6hUQuT2ro4aj/A9joTwgS4z6t2Jppzl6DrMiyuFbPu9e5rXzoT4O941c5EfyuAHCQOh9oeGto/hpXXt9wTJuWZvf0BXKSFSSzKmlqYiIpVgVIWvVzrDHSvd78ME51ZhoWHnkHPF/ejMwFulxYmKlR1DrX/x6GCbIWJuxPN9bobD62zl4aJuRPSvLuU2lrCBLhdWpio8PRPwGV3Uit4rXWYxG6h/LH0WjHrXgya2ij31HsUXn5GB8pqtRrPiwgT4HYpYeKCVDC8JEw04u8gMVhaI4ZDbe+o7Da0fwwS0zrN69WdUnkWgL60MNlut+Nr62tODIryh1QA/760rzkA/m+ECYAUhAmAFIQJgBSECYAUhAmAFIQJgBSECYAUhAmAFIQJgBSECYAUhAmABMPwA3lzo4iOTTOQAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">Download_Time + "[k(enter)]"</mca:CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click '確認'" sap:VirtualizedContainerService.HintSize="1047,158" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment#" DesignTimeRectangle="1564, 648, 200, 34" ElementType="Button" FriendlyName="'確認'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='btn btn-primary exportOrderModalSubmit' aaname='確認' check:text='確認' /&gt;" Guid="dedeb3c1-7983-488a-b203-685a7034914b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAmCAYAAACI/XQWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKPSURBVHhe7Z3BThRBFEX9N7d+Dr9gYuJfQIwrFm505wbB6MKQgJuJiQZQSSaIYiYGIZS5zdy2qKkZnrGr2ZybnPR0dVUv4B1eTbPoe4kQEg7CEPIP6YXZPX6RHr9+kB6+ug8Ac+SE3HB6YZAFoI7ccHphahMB4BoHYQACOAgDEMBBGIAADsIABHAQBiCAgzAAARyEAQjgIMwd82zyKJ2dT7tjee3J3lo6/fUlbR1s9OeauywfT98t3AOGwUGYxqjYL68u5j/l60xOdtL55Wx+thhJITm0fvf4+Y1zU4omWRCmHQ7CjERe0C72rYP1NPv9Pb39vNmhaxJMXeXDtzfz38zfSB4xnX3q5mmthdEYwrTDQZiR+Ppz0m+tLIzGdJQs6ji6bmHKjiK8JbM4+ux5EkZj5RoYBgdhRqAmgaSRJC7yckvl644+aysnSSxcPh9h2uIgzAiosB0VvgpeBb4seeeoobX5HB3zhwMwPA7CNMadwp1Bxa6tmOKirxV8rcOog+gBgqXTfD9QuE0y+D8chGmMilwFLiFU5CpsFbm2V+XTM2fZl3cJ4ocD4vDHfnfPfA60wUGYxuivvqSxMOow7g7+XlPrMBqTXE7eQXw/dSrdz2ugHQ7CjIDlKIVZ1WEkh+d6nbqL7vN++rK/JpF01BrkaYeDMCOwTBiNreowpTCHZ/udGOowuRwa8yNqzfU4DIeDMCOQd5PaF/YymrN99PTGlkz/pNS51pXC6LO6TikdDIeDMCOgInY3WTWWU+swnlvKZgnLe8BwOAgDEMBBGIAADsIABHAQBiCAgzAAARyEAQjgIAxAAAdhAAI4CAMQwOmF4XUXAHWqr7vghUoAi8iJ6guVCCG3B2EICSelP73UiXd2EXLlAAAAAElFTkSuQmCC" InformativeScreenshot="02e4610abe5096d84f31ce39041bd4f4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <Delay Duration="00:00:15" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              <Assign DisplayName="Set Download Base" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">Generated_Report_Base</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">"資料已按以下條件匯出: 流程: 優惠券/套票 / 創建日期: "+Download_Time</mca:CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NClick ClickType="Single" DisplayName=" Click Download Sales report Button" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://homeplus-staging.clearomni.com/admin/fulfilment#" DesignTimeRectangle="1094, 459, 39, 34" ElementType="Button" FriendlyName="'BUTTON 157403'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='BUTTON' class='btn btn-primary download-button' aaname='' /&gt;" Guid="08373050-0ba5-4ec3-9f2e-6809d612e9ea" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAmCAYAAABdw2IeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEiSURBVFhH7ZixasJQFIb7bq59j76Ar5DJzalDceueqTo4dCi4FPEFSrlbQxQVRQmCv1y4fzTk0ibNUXPhfPCRIfdePsJJhjwgIMKMnf0M0Zs8IvrotEbbY7tIHtu2UGq7SB7rW9gWicZKSzRWWqKx0hLx2NFy404E9su+d01diXjseHURu3r2rqkr0VjS0tgY6dEd5ONo8OndV00i9mRfzBR7d1aRDb7Nk3dPVYnoGJSDm4daifjMnoNlQq2kUWw8X7jdJEOaRHg1b5h9dREnBgd3h2znkfes3ySNYi/f/DMZtjuDdLcohVr+84UgV4gtclgP8L7O8uvdYstj8Dd3G4NbSTRWWqKx0hKNlZZorLREY6UleWxQvzyD+pkcAgHFAienjHkyOJfvdQAAAABJRU5ErkJggg==" InformativeScreenshot="8c697be1609ef96d6b378e145aeed165.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='執行訂單 — HOMEPLUS' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="397, 410, 618, 44" ElementType="Text" FriendlyName="'Generated Report'" ImageBase64="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" SearchSteps="Selector, FuzzySelector">
+                          <uix:Target.FullSelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">String.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='job-remarks' tag='TD' aaname='{0}' /&gt;", Generated_Report_Base)</mca:CSharpValue>
+                            </InArgument>
+                          </uix:Target.FullSelectorArgument>
+                          <uix:Target.FuzzySelectorArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">String.Format("&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='job-remarks' tag='TD' aaname='{0}' type='' class='' check:text='Generated Report base on 訂單日期: 2022-06-26 to 2022-06-26' /&gt;", Generated_Report_Base)</mca:CSharpValue>
+                            </InArgument>
+                          </uix:Target.FuzzySelectorArgument>
+                        </uix:Target>
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Saved file Path" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,220" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="66f4fcbd-5dbd-430c-938a-1fecd40c81ec" Version="V1">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="136, 503, 791, 19" ElementType="InputBox" FriendlyName="'Export_Order_2022062307…'" FullSelectorArgument="&lt;wnd aaname='浏览器窗格' cls='DirectUIHWND' /&gt;&lt;wnd aaname='文件名:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='浏览器窗格' cls='DirectUIHWND' /&gt;&lt;wnd aaname='文件名:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="1051bd18-8b7f-4e29-989d-09cdad3c82c5" ImageBase64="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" InformativeScreenshot="d3c991ba9b0db6659fd26071562e3127.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='另存为' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
+                    <uix:TargetAnchorable.PointOffset>
+                      <uix:PointOffset Position="BottomRight" X="-82" Y="-10" />
+                    </uix:TargetAnchorable.PointOffset>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.Text>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">Save_File_Path+"\\"+Evoucher_Order_Name + "[k(enter)]"</mca:CSharpValue>
+                  </InArgument>
+                </uix:NTypeInto.Text>
+              </uix:NTypeInto>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                <ui:LogMessage.Message>
+                  <InArgument x:TypeArguments="x:Object">
+                    <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Evoucher Report Finish"</mca:CSharpValue>
+                  </InArgument>
+                </ui:LogMessage.Message>
+              </ui:LogMessage>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d138f953738c69d7f1ecafc8afbce5df.png" Selector="&lt;html app='chrome.exe' title='登錄 — CLEARomni' /&gt;" Url="https://sso.clearomni.com/login" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
