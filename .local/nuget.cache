@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "drDqB7pmrgR3AryQRFzeU9mGHZ9OVkek3rvsVGb0Avi2x5/lTthzt0K3QqL2JNt2JFB1HAdXAUWr6dGkNtNebw==",
+  "dgSpecHash": "qMcGYNBaZlX+vSFxS3JUNJyoEaY1TddIIcrTXbm53rukTGJrglGl7M3fFcD8S1tXRmctxGL+p0Bn8p9IMnfPRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fuwen\\Desktop\\新建文件夹\\Jessie Process (1)\\Jessie Process\\.local\\",
+  "projectFilePath": "C:\\Users\\Fuwen\\Desktop\\Test_git\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Fuwen\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\Fuwen\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
